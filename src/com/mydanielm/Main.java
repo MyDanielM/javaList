@@ -8,5 +8,7 @@ public class Main {
         first.addItem(1);
         first.addItem(20);
         first.display();
+        first.deleteItem(100);
+        first.display();
     }
 }

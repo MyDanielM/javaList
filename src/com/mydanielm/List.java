@@ -26,12 +26,22 @@ public class List {
         }
 
     }
-
+    //Метод удаления элемента по значению
+    public void deleteItem(int info)
+    {
+        if(count == 0) return;
+        count--;
+        Node current = head;
+        while (current.getNext()!=null && current.getNext().getInfo() != info)
+            current=current.getNext();
+        if(current.getNext() == null) System.out.println("В списке нет такого элемента!");
+        else current.setNext(current.getNext().getNext());
+    }
     public void display()
     {
         if(count==0)
         {
-            System.out.print("Список пуст!");
+            System.out.println("Список пуст!");
             return;
         }
         Node current = head;
@@ -40,7 +50,7 @@ public class List {
             System.out.print(current.getInfo()+ " ");
             current = current.getNext();
         }
-
+        System.out.println();
     }
 
 }
